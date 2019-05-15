@@ -1,18 +1,62 @@
-
 <div class="col d-flex my-3">
-  <div class="d-flex">
-    <img src="assets/profile.jpg" class="rounded-circle h-75 m-auto" draggable="false">
+  <div class="d-flex card-holder">
+    <img src="assets/profile.jpg" class="card-over rounded-circle h-75 m-auto" draggable="false">
+    <div class="card-panel">
+      <div class="harabara card-content">
+        <h1 class="mx-auto mb-0">Leiva, Juan Cruz</h1>
+        <div class="font-default muted ml-1 mb-3" style="line-height: 0.3em">
+          Programador, Músico de Hobby
+        </div>
+        <perfect-scrollbar>
+          <div class="pb-2 font-default text-justify" style="padding-right: 0.5em">
+            <div class="pb-1">
+              &nbsp; &nbsp; 
+              Soy un entusiasta de la programación, y de la informática en General.
+            </div>
+            <div class="pb-1">
+              &nbsp; &nbsp; 
+              Aún no tengo mucho más que decir sobre mí, aunque más abajo podés ver algunos proyectos que hice.
+            </div>
+            <div>
+              &nbsp; &nbsp; 
+              Actualmente, estoy estudiando Ingeniería en Informática en UNL - FICH, Argentina
+            </div>
+          </div>
+        </perfect-scrollbar>
+      </div>
+    </div>
   </div>
-  <div class="col harabara d-flex custom-txt">
+  <div class="col harabara d-flex custom-text">
     <div class="m-auto">
       <div class="font-italic">
         Parece que encontraste mi página personal . . .
       </div>
-      <div #txt0 class="text-right mr-3" style="font-size: calc(4px + 0.5em)">
-        Bueno . . . &nbsp; Hola, supongo
-      </div>
-      <div class="ghost-text" [ngStyle]="{'left': txt0_X}">
-        Me llamo Juan
+      <div [ngSwitch]="randomText">
+        <div *ngSwitchCase="0">
+          <div class="text-right mr-3 sub-text">
+            Bueno . . . &nbsp; Hola, supongo
+          </div>
+          <div style="height:0">
+            <div class="ghost-text">
+              Me llamo Juan
+            </div>
+          </div>
+        </div>
+        <div *ngSwitchCase="1">
+          <div class="text-right mr-3 sub-text">
+            Por favor, no la rompas
+          </div>
+        </div>
+        <div *ngSwitchCase="2">
+          <div class="text-right mr-3 sub-text">
+            Psst, hacele hover a la imagen
+          </div>
+        </div>
+        <div *ngSwitchDefault>
+          <div class="text-right mr-3 sub-text">
+            Ya que estás, ojeá un poco mis proyectos
+          </div>
+        </div>
       </div>
     </div>
   </div>

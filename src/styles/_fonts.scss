@@ -1,0 +1,38 @@
+@import 'mixins';
+
+@font-face {
+    font-family: 'harabara';
+    src: url('/assets/fonts/harabara/harabara-webfont.woff2') format('woff2'),
+         url('/assets/fonts/harabara/harabara-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.harabara {
+    font-family: 'harabara', Helvetica, sans-serif
+}
+
+.font-default {
+    font-family: var(--font-family-sans-serif);
+}
+html {
+  font-size: 0.9rem;
+}
+
+@include mq('sm') {
+  html {
+    font-size: 1rem;
+  }
+}
+
+@include mq('md') {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include mq('lg') {
+  html {
+    font-size: 1.4rem;
+  }
+}

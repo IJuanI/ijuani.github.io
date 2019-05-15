@@ -1,0 +1,61 @@
+@import '~@angular/material/theming';
+
+@mixin custom-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  body {
+    background-color: mat-color($background, default) !important;
+    color: mat-color($foreground, text);
+  }
+
+  .muted { color: mat-color($foreground, disabled-text)}
+
+  .ps .ps__rail-y:hover, .ps.ps--scrolling-y .ps__rail-y {
+    background-color: transparent !important;
+  }
+
+  mat-sidenav-container {
+    background-color: mat-color($background, default) !important;
+  }
+
+  .header-start .mat-tab-labels {
+    justify-content: start !important;
+  }
+  
+  mat-tree-node {
+    min-height: 0;
+  }
+
+  *:focus {
+    outline: 0 !important;
+  }
+
+  button {
+    border: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  a {
+    color: mat-color($foreground, text);
+    &:hover {
+      text-decoration: none;
+      color: mat-color($foreground, text);
+    }
+  }
+}

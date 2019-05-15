@@ -1,0 +1,64 @@
+@import '~@angular/material/theming';
+@import 'src/styles/app.scss';
+
+$background: map-get($theme, background);
+
+.custom-text {
+  font-size: calc(4vw - 10px);
+  @include mq('md', max) { font-size: 20px }
+}
+.sub-text {
+  font-size: calc(4px + 0.5em);
+}
+.ghost-text {
+  font-size: 0.5em;
+  letter-spacing: 0.1em;
+  margin-left: 5%;
+  width: 100%;
+  text-align: right;
+}
+
+.card-panel {
+    position: absolute;
+    display: flex;
+    overflow: hidden;
+    background-color: mat-color($background, card);
+    width: 100%;
+    max-width: 250%;
+    height: 100%;
+    opacity: 0;
+    transition: width .8s, opacity .6s;
+    border-radius: 30px;
+    z-index: 2;
+}
+
+.card-content {
+    display: none;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-left: 300px;
+    padding: .75em .5em .75em 0;
+    min-width: calc(-100px + 50vw);
+    font-size: calc(2.5vw - 6px);
+    @include mq('lg') { min-width: 450px; }
+    @include mq('md', max) { font-size: 13px }
+    h1 {
+        font-size: 1.9em;
+    }
+}
+
+.card-holder {
+    position: relative;
+    &:hover {
+        .card-panel {
+            width: calc(200px + 50vw);
+            opacity: 1;
+            transition: width 1s, opacity .3s;
+        }
+        .card-content {
+            display: flex;
+        }
+    }
+}
+
+.card-over { z-index: 3; }
