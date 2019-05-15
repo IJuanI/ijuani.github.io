@@ -26,6 +26,6 @@ import { Component } from '@angular/core';
   `,
   styles: []
 })
-export class AppComponent {
+export class LayoutComponent {
   title = 'about-me';
 }
